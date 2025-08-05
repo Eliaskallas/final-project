@@ -15,12 +15,23 @@
     <main>
       <section>
         <h2>Your tasks</h2>
+
         <div class="task-input-row">
           <label for="taskinput" style="flex: 1; margin: 0;">
             <input type="text" id="taskinput" name="taskinput" placeholder="add a new task...">
           </label>
           <button id="addtaskbtn" type="button">add task</button>
         </div>
+
+        <div class="action-buttons">
+          <button id="showtasksbtn" type="button">show tasks</button>
+          <button id="deletetaskbtn" type="button">delete task</button>
+          <button id="updatetaskbtn" type="button">update task</button>
+          <button id="markcompletedbtn" type="button">mark as completed</button>
+        </div>
+
+        <ul id="tasklist"></ul>
+
       </section>
     </main>
 

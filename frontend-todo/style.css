@@ -50,3 +50,34 @@ h2 {
   border-color: #388e3c;
   outline: none;
 }
+/* ===== action buttons ===== */
+.action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.action-buttons button {
+  flex: 1 1 calc(50% - 0.8rem);
+}
+
+/* ===== task list ===== */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #f2f2f2;
+  margin: 0.3rem 0;
+  padding: 0.5rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}

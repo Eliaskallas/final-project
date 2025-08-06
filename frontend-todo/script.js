@@ -6,6 +6,8 @@ const deletetaskbtn = document.getElementById('deletetaskbtn');
 const updatetaskbtn = document.getElementById('updatetaskbtn');
 const markcompletedbtn = document.getElementById('markcompletedbtn');
 const tasklist = document.getElementById('tasklist');
+const theme_toggle = document.getElementById('theme_toggle');
+const page_body = document.getElementById('page_body');
 
 // === add task ===
 function addtask() {
@@ -74,3 +76,16 @@ function markcompleted() {
   });
 }
 markcompletedbtn.addEventListener('click', markcompleted);
+
+// === toggle theme ===
+function toggletheme() {
+  page_body.classList.toggle('dark-theme');
+  page_body.classList.toggle('light-theme');
+  
+  if (page_body.classList.contains('dark-theme')) {
+    theme_toggle.textContent = 'light mode';
+  } else {
+    theme_toggle.textContent = 'dark mode';
+  }
+}
+theme_toggle.addEventListener('click', toggletheme);

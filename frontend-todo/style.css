@@ -81,3 +81,39 @@ li {
   text-decoration: line-through;
   color: gray;
 }
+
+/* ===== footer ===== */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #4caf50;
+  padding: 0.8rem 0;
+  text-align: center;
+}
+
+#theme_toggle {
+  background: white;
+  color: #4caf50;
+  font-weight: bold;
+}
+/* ===== light/dark theme ===== */
+.light-theme { background-color: #f9f9f9; color: #222; }
+.dark-theme { background-color: #121212; color: #f9f9f9; }
+.dark-theme main { background: #1e1e1e; }
+.dark-theme li { background: #333; }
+
+/* ===== button styles ===== */
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+}
+
+#addtaskbtn { background: linear-gradient(135deg, #4caf50, #45a049); color: white; }
+#showtasksbtn { background: linear-gradient(135deg, #2196f3, #1976d2); color: white; }
+#deletetaskbtn { background: linear-gradient(135deg, #f44336, #d32f2f); color: white; }
+#updatetaskbtn { background: linear-gradient(135deg, #ff9800, #ef6c00); color: white; }
+#markcompletedbtn { background: linear-gradient(135deg, #9c27b0, #7b1fa2); color: white; }

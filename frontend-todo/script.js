@@ -1,4 +1,4 @@
-// === dom elements ===
+// === DOM elements ===
 const taskinput = document.getElementById('taskinput');
 const addtaskbtn = document.getElementById('addtaskbtn');
 const showtasksbtn = document.getElementById('showtasksbtn');

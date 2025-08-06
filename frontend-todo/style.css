@@ -1,4 +1,4 @@
-/* ===== base styles ===== */
+/* ===== Body style ===== */
 body {
   font-family: arial, sans-serif;
   margin: 0;
@@ -50,6 +50,7 @@ h2 {
   border-color: #388e3c;
   outline: none;
 }
+
 /* ===== action buttons ===== */
 .action-buttons {
   display: flex;
@@ -93,12 +94,14 @@ footer {
   text-align: center;
 }
 
+/* ===== light/dark theme ===== */
+
 #theme_toggle {
   background: white;
   color: #4caf50;
   font-weight: bold;
 }
-/* ===== light/dark theme ===== */
+
 .light-theme { background-color: #f9f9f9; color: #222; }
 .dark-theme { background-color: #121212; color: #f9f9f9; }
 .dark-theme main { background: #1e1e1e; }
@@ -117,3 +120,34 @@ button {
 #deletetaskbtn { background: linear-gradient(135deg, #f44336, #d32f2f); color: white; }
 #updatetaskbtn { background: linear-gradient(135deg, #ff9800, #ef6c00); color: white; }
 #markcompletedbtn { background: linear-gradient(135deg, #9c27b0, #7b1fa2); color: white; }
+
+/* ===== Mobile Adjustments ===== */
+@media (max-width: 480px) {
+  main {
+    margin: 1rem;
+    padding: 0.8rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .task-input-row {
+    flex-direction: column;
+  }
+
+  .task-input-row button {
+    width: 100%;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .action-buttons button {
+    flex: 1 1 100%;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+}

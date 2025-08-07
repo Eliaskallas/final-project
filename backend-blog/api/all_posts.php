@@ -5,7 +5,7 @@ include '../connection.php';
 header("Content-Type: application/json");
 
 //Fetch all posts ordered by most recent
-$result = $mysqli->query("SELECT * FROM posts ORDER BY id DESC");
+$result = $mysqli->query("SELECT * FROM posts ORDER BY id DESC"); //look at 3school.com for using order by and DESC
 
 $posts = [];
 $row = $result->fetch_assoc();

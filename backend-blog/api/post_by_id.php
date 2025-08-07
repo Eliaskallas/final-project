@@ -5,14 +5,14 @@ include '../connection.php';
 header("Content-Type: application/json");
 
 $data = json_decode(file_get_contents("php://input"), true);
-// $data = ["id" => 1]; //this line is for testing purposes: i tried other ids that are not in the database
+// $data = ["id" => -1]; //this line is for testing purposes: i tried other ids (even negative ones) that are not in the database
 
-// Validation (id is required)
-if (!isset($data["id"])) {
+// Validation (id is required and > 0)
+if (!isset($data["id"]) || $data["id"] <= 0) {
     http_response_code(500);
     echo json_encode([
         "status" => "error",
-        "message" => "Post ID is required"
+        "message" => "Post ID is required and must be greater than 0"
     ]);
     exit;
 }

@@ -5,14 +5,14 @@ include '../connection.php';
 header("Content-Type: application/json");
 
 $data = json_decode(file_get_contents("php://input"), true);
-// $data = ["user_id" => 1]; //this line is for testing purposes: i tried other user_ids that are not in the database
+// $data = ["user_id" => 1]; //this line is for testing purposes: i tried other user_ids (even negative ones) that are not in the database
 
-// Validation (user_id is required)
-if (!isset($data["user_id"])) {
+// Validation (user_id is required and > 0)
+if (!isset($data["user_id"]) || $data["user_id"] <= 0) {
     http_response_code(500);
     echo json_encode([
         "status" => "error",
-        "message" => "User ID is required"
+        "message" => "User ID is required and must be greater than 0"
     ]);
     exit;
 }

@@ -15,19 +15,19 @@ if ($_SERVER["REQUEST_METHOD"] !== "PUT") {
 }
 
 $data = json_decode(file_get_contents("php://input"), true);
-// $data = ["id" => 20, "content" => "Updated comment for the new post"]; //this line is for testing purposes: i tried other ids that are not in the database
+// $data = ["id" => 20, "content" => "Updated comment for the new post"]; //this line is for testing purposes: i tried other ids (even negative ones) that are not in the database
 
-// Validate input (id and content are required)
-if (!isset($data["id"])) {
+// Validate input (id should be > 0 and content are required)
+if (!isset($data["id"]) || $data["id"] <= 0) {
     http_response_code(400);
     echo json_encode([
         "status" => "error",
-        "message" => "Comment ID is required"
+        "message" => "Comment ID is required and must be greater than 0"
     ]);
     exit;
 }
 
-if (!isset($data["content"])) {
+if (!isset($data["content"])) { 
     http_response_code(400);
     echo json_encode([
         "status" => "error",
